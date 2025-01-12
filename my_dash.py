@@ -11,24 +11,11 @@ from mpl_toolkits.mplot3d import Axes3D
 # Configurer le style global de Streamlit
 st.set_page_config(layout="wide", page_title="Dashboard Feux de Forêt")
 
-# Convertir l'image en base64
-with open("C:/Users/user/Desktop/GMS/Projet_bridier/feux_png.jpg", "rb") as image_file:
-    encoded_image = base64.b64encode(image_file.read()).decode()
 
 # Ajouter un style de background et un titre principal avec logo
 page_style = f"""
 <style>
-[data-testid="stAppViewContainer"] {{
-    background-image: url("data:image/jpeg;base64,{encoded_image}");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 0.9; /* Réduction de l'opacité de l'image */
-}}
-[data-testid="stHeader"] {{
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-}}
+
 h1.title {{
     font-size: 2em;
     text-align: center;
