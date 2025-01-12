@@ -69,7 +69,7 @@ st.markdown(page_style, unsafe_allow_html=True)
 st.markdown('<h1 class="title" style="margin-top: 0em;">Analyse Intégrée des Feux de Forêt en Milieu Méditerranéen : Combinaison de SIG et Python pour une Exploration Spatiale, Statistique et Visuelle</h1>', unsafe_allow_html=True)
 
 # Chargement des données
-file_path = 'C:/Users/user/Desktop/GMS/Projet_bridier/Incendos.csv'
+file_path = 'Incendos.csv'
 data = pd.read_csv(file_path, encoding='latin1', sep=';')
 
 # Section 1 : Graphiques de feux par heure et mois
@@ -155,8 +155,8 @@ st.markdown('<h2 class="section-title">Cartes des feux par mois</h2>', unsafe_al
 col1, col2 = st.columns(2)
 
 def plot_fire_map_july():
-    shapefile_path = r'C:/Users/user/Desktop/GMS/Projet_bridier/Commune_var.shp'
-    july_data_path = r'C:/Users/user/Desktop/GMS/Projet_bridier/Moyenne_des_Feux_en_Juillet_par_Commune_avec_Code_INSEE.csv'
+    shapefile_path = 'Commune_var.shp'
+    july_data_path = 'Moyenne_des_Feux_en_Juillet_par_Commune_avec_Code_INSEE.csv'
     communes = gpd.read_file(shapefile_path)
     july_data = pd.read_csv(july_data_path, delimiter=',')
     communes = communes.rename(columns={'INSEE_COM': 'Code_INSEE'})
@@ -171,8 +171,8 @@ def plot_fire_map_july():
 col1.pyplot(plot_fire_map_july())
 
 def plot_fire_map_august():
-    shapefile_path = r'C:/Users/user/Desktop/GMS/Projet_bridier/Commune_var.shp'
-    august_data_path = r'C:/Users/user/Desktop/GMS/Projet_bridier/Moyenne_des_Feux_en_Ao_t_par_Commune_avec_Code_INSEE.csv'
+    shapefile_path = 'Commune_var.shp'
+    august_data_path = 'Moyenne_des_Feux_en_Ao_t_par_Commune_avec_Code_INSEE.csv'
     communes = gpd.read_file(shapefile_path)
     august_data = pd.read_csv(august_data_path, delimiter=',')
     communes = communes.rename(columns={'INSEE_COM': 'Code_INSEE'})
@@ -189,8 +189,8 @@ col2.pyplot(plot_fire_map_august())
 st.markdown('<h2 class="section-title">Carte des Feux par Commune - Var</h2>', unsafe_allow_html=True)
 
 def plot_fire_map_commune_var():
-    feu_par_commune_path = r'C:/Users/user/Desktop/GMS/Projet_bridier/feu_par_commune.csv'
-    shapefile_path = r'C:/Users/user/Desktop/GMS/Projet_bridier/Commune_var.shp'
+    feu_par_commune_path = 'feu_par_commune.csv'
+    shapefile_path = 'Commune_var.shp'
     feu_par_commune = pd.read_csv(feu_par_commune_path, encoding='latin1', sep=';')
     communes = gpd.read_file(shapefile_path)
     communes = communes.rename(columns={'NOM_COM': 'Commune'})
